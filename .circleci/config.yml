@@ -38,7 +38,16 @@ jobs:
       # run tests!
       - run: npm run test
 
+#       # run database migration
+# +     - run: yarn migrate
+
+        - run:
+            name: migrate
+            command: npm run migrate
+
+
 workflows:
   heroku_deploy:
     jobs:
+      - build
       - heroku/deploy-via-git
