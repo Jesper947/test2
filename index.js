@@ -24,9 +24,7 @@ app.use(async (ctx, next) => {
 app.use(apiRoute.routes())
 app.use(apiRoute.allowedMethods())
 
-router.get('/health', async ctx => {
-  ctx.body = 'OK'
-})
+
 
 const port = process.env.PORT || 3000
 app.listen(port, () => {

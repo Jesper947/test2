@@ -26,4 +26,8 @@ router.delete('/api/todo/:id', async ctx => {
   ctx.body = await databaseService.deleteTodo(ctx.params.id)
 })
 
+router.get('/health', async ctx => {
+  ctx.body = 'OK'
+})
+
 module.exports = router
